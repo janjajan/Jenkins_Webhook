@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'This stage will build the code.'
+                build job: 'First_Jenkins_Job', parameters: [string(name: 'Tag_Name', value: '@smoke'), booleanParam(name: 'isWebTest', value: true), string(name: 'Browser', value: 'chrome')]
             }
         }
         stage('Deploy') {
