@@ -20,6 +20,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'This stage will execute the Tests'
+                sh 'javac Hello.java'
+                sh 'java Hello'
             }
         }
         stage('Release') {
